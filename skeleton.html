@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frontend Development — Class Page</title>
+
+    <!-- Google Font: Edu NSW ACT Cursive -->
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --ink: #222;
+            --paper: #fffdf7;
+            --accent: #5c7cfa;
+            --accent-2: #ffd166;
+            --muted: #6b7280;
+            --card: #ffffffcc;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--ink);
+            background: linear-gradient(180deg, #fffef9 0%, #fff6d9 100%);
+            min-height: 100vh;
+        }
+
+        /* Handwritten headings */
+        .hand {
+            font-family: "Edu NSW ACT Cursive", cursive;
+            letter-spacing: .2px;
+        }
+
+        header {
+            padding: 48px 20px 28px;
+            text-align: center;
+            background:
+                radial-gradient(1200px 400px at 50% -200px, #e9f0ff 0%, transparent 60%);
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 6px;
+            line-height: 1.1;
+        }
+
+        header p {
+            margin: 0;
+            color: var(--muted);
+            font-size: clamp(.95rem, 2.4vw, 1.05rem);
+        }
+
+        .wrap {
+            width: min(1000px, 92%);
+            margin: 26px auto 56px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--card);
+            backdrop-filter: blur(6px);
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 18px 18px 14px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 1.4rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: .22rem .6rem;
+            border-radius: 999px;
+            background: var(--accent-2);
+            font-weight: 600;
+            font-size: .78rem;
+            margin-left: .4rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 18px;
+        }
+
+        .col-7 {
+            grid-column: span 7
+        }
+
+        .col-5 {
+            grid-column: span 5
+        }
+
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .col-7,
+            .col-5 {
+                grid-column: auto
+            }
+        }
+
+        ul {
+            margin: 10px 0 0 18px;
+            line-height: 1.6;
+        }
+
+        .syllabus li+li {
+            margin-top: .2rem
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .98rem;
+        }
+
+        th,
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px dashed #e5e7eb;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            color: #111827;
+            background: #f8fafc;
+            font-weight: 700;
+        }
+
+        .cta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .btn {
+            appearance: none;
+            border: none;
+            cursor: pointer;
+            padding: .7rem 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 6px 14px rgba(92, 124, 250, .3);
+            transition: transform .06s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px)
+        }
+
+        .btn.secondary {
+            background: #111827;
+            box-shadow: 0 6px 14px rgba(17, 24, 39, .15);
+        }
+
+        /* Handwritten headings + accents */
+        h1.hand,
+        h2.hand,
+        h3.hand {
+            color: #111827;
+            text-shadow: 0 1px 0 #fff;
+        }
+
+        .chalk {
+            font-family: "Edu NSW ACT Cursive", cursive;
+            font-weight: 600;
+            background: #f1f5ff;
+            border-left: 4px solid var(--accent);
+            padding: 10px 12px;
+            border-radius: 12px;
+            margin: 10px 0 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: .9rem;
+            padding: 28px 14px 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="hand">Frontend Development — Module</h1>
+        <p>Code interactive, accessible, and beautiful web pages. Learn HTML, CSS, and a dash of JS.</p>
+    </header>
+
+    <main class="wrap">
+        <section class="card">
+            <h2 class="hand">About this class <span class="tag">12 weeks</span></h2>
+            <p>Welcome! This module introduces modern frontend foundations with lots of practice-based tasks and mini
+                projects.</p>
+            <p class="chalk">Tip: View this page’s source to see how the Google Font is imported and applied.</p>
+            <div class="cta">
+                <a class="btn" href="#syllabus">View Syllabus</a>
+                <a class="btn secondary" href="#schedule">See Schedule</a>
+            </div>
+        </section>
+
+        <section id="syllabus" class="card">
+            <h2 class="hand">Syllabus overview</h2>
+            <ul class="syllabus">
+                <li><strong>Week 1–2:</strong> Semantic HTML, document structure, accessibility basics.</li>
+                <li><strong>Week 3–4:</strong> CSS fundamentals — the cascade, selectors, the box model.</li>
+                <li><strong>Week 5–6:</strong> Layout — Flexbox & Grid, responsive design, media queries.</li>
+                <li><strong>Week 7–8:</strong> Components — buttons, cards, forms; design tokens and variables.</li>
+                <li><strong>Week 9–10:</strong> Interactivity with vanilla JavaScript; DOM manipulation.</li>
+                <li><strong>Week 11:</strong> Performance & accessibility checks; DevTools workflow.</li>
+                <li><strong>Week 12:</strong> Mini–project showcase & code review.</li>
+            </ul>
+        </section>
+
+        <section id="schedule" class="grid">
+            <div class="card col-7">
+                <h2 class="hand">Weekly schedule</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Topic</th>
+                            <th>In-class</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>HTML Essentials</td>
+                            <td>Build a semantic profile page</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Accessibility First</td>
+                            <td>Headings, landmarks, alt text audit</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>CSS Basics</td>
+                            <td>Style the profile page</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Selectors & Cascade</td>
+                            <td>Specificity battles (safely!)</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Flexbox</td>
+                            <td>Gallery layout</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Grid</td>
+                            <td>Magazine layout</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Design Tokens</td>
+                            <td>Theme variables</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Forms</td>
+                            <td>Accessible form patterns</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>DOM & Events</td>
+                            <td>Tabs + modal</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>State & Patterns</td>
+                            <td>Accordion component</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Perf & A11y</td>
+                            <td>Lighthouse + fixes</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Showcase</td>
+                            <td>Present mini–project</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card col-5">
+                <h2 class="hand">Instructor & contact</h2>
+                <p><strong>Instructor:</strong>
+                    <a href="https://grandeelee.github.io/" target="_blank" style="color:#5c7cfa; text-decoration:none;">
+                        Grandee Lee
+                    </a>
+                </p>
+                <p><strong>Consultation:</strong> Tue 3–5pm, Lab 2</p>
+                <p><strong>Email:</strong> frontend@class.example</p>
+            
+                <h3 class="hand" style="margin-top:14px;">Next assignment</h3>
+                <p><strong>Due:</strong> Week 4 — Build a responsive, accessible “About Me” page using Flexbox.</p>
+                <ul>
+                    <li>Use semantic HTML5 elements</li>
+                    <li>Include a small component (card or button)</li>
+                    <li>Meet basic color-contrast guidelines</li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        © 2025 Frontend Development Module — Made with <span class="hand">Edu NSW ACT Cursive</span>
+    </footer>
+</body>
+
+</html>
